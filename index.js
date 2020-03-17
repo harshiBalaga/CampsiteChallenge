@@ -85,6 +85,9 @@ var shortestPathGraph = createGraph()
 for (var i = 1; i < 17; i++) {
   paths[i] = shortestPathGraph.shortestPath(0, i)
 }
+var sum = data.reduce(function (accumulator, value) {
+    return value.time + accumulator;
+})
 
 data.forEach(function(family) {
   family.path = paths[family.caravan]
@@ -93,5 +96,8 @@ data.forEach(function(family) {
 data.sort(function (a, b) {
   return a.time - b.time
 })
-console.dir(data)
+data.reduce(function (accumulator, value) {
+    return value.time + accumulator;
+})
 
+console.dir(data)
